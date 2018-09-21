@@ -7,6 +7,7 @@ public class Chaser : MonoBehaviour
     public float moveSpeed;
     public GameObject player;
     public Rigidbody rigid;
+    public int health;
 
 	// Use this for initialization
 	void Start ()
@@ -20,5 +21,10 @@ public class Chaser : MonoBehaviour
     {
         transform.LookAt(player.transform);
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 }

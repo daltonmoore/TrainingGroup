@@ -9,12 +9,13 @@ public class UI : MonoBehaviour
     public GameObject dialogueOverlay;
     public Text dialogueText;
     public Text coinCounterText;
+    public bool inDialog = false;
 
     PlayerController pc;
     string[] lines;
     int curLine;
     int endLine;
-    bool inDialog = false;
+    
 
     public void StartDialog(TextAsset textAsset)
     {
